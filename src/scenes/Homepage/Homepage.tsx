@@ -21,7 +21,7 @@ export default function Homepage() {
       image:
         activeCharacter === 'odeng'
           ? '/images/characters/odeng_pfp.png'
-          : '/images/characters/jakz_pfp-removebg-preview.png',
+          : '/images/characters/jakz_pfp.png',
     }
   }, [activeCharacter])
 
