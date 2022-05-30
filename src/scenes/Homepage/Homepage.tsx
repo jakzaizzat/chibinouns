@@ -29,8 +29,21 @@ export default function Homepage() {
   return (
     <StyledScreenContainer character={activeCharacter}>
       <SyledCharacterImageContainer
+        key={activeCharacter}
         size={{
           '@md': 'md',
+        }}
+        initial={{
+          x: '30px',
+          opacity: 0,
+        }}
+        animate={{
+          x: '0',
+          opacity: 1,
+        }}
+        transition={{
+          type: 'tween',
+          duration: 0.5,
         }}
       >
         <Image
@@ -195,7 +208,7 @@ const StyledScreenContainer = styled('section', {
   },
 })
 
-const SyledCharacterImageContainer = styled('div', {
+const SyledCharacterImageContainer = styled(motion.div, {
   position: 'absolute',
   left: '-50px',
   bottom: '0',
