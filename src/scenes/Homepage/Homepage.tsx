@@ -6,6 +6,7 @@ import Button from '../../components/Button'
 import Link from '../../components/Link'
 import { styled } from '../../../stitches.config'
 import Box from '../../components/Box'
+import { motion } from 'framer-motion'
 
 type CharacterName = 'odeng' | 'jakz'
 
@@ -67,10 +68,26 @@ export default function Homepage() {
                 '@lg': 'md',
               }}
             >
-              <Box>
+              <Box
+                css={{
+                  marginBottom: '2rem',
+                }}
+              >
                 <Title
                   size={{
                     '@md': 'md',
+                  }}
+                  initial={{
+                    y: '30px',
+                    opacity: 0,
+                  }}
+                  animate={{
+                    y: '0',
+                    opacity: 1,
+                  }}
+                  transition={{
+                    type: 'tween',
+                    duration: 0.5,
                   }}
                 >
                   We're still building, see you soon.
@@ -79,6 +96,19 @@ export default function Homepage() {
                   size={{
                     '@md': 'md',
                   }}
+                  initial={{
+                    y: '30px',
+                    opacity: 0,
+                  }}
+                  animate={{
+                    y: '0',
+                    opacity: 1,
+                  }}
+                  transition={{
+                    type: 'tween',
+                    duration: 0.5,
+                    delay: 0.5,
+                  }}
                 >
                   Web Generated Modular Interfaces is a collection of 10,000
                   randomly generated PFPPP’s (profile picture passion project).
@@ -86,26 +116,59 @@ export default function Homepage() {
                   roadmaps or promises, just vibes. ⌐◨-◨
                 </Paragraph>
 
-                <Button variant="primary">Follow us</Button>
-                <Button variant="secondary">Discord</Button>
-              </Box>
-
-              <Box>
-                By <Link onMouseEnter={() => handleOnHover('odeng')}>Oden</Link>
-                <span
-                  style={{
-                    margin: '0 5px',
+                <motion.div
+                  initial={{
+                    y: '30px',
+                    opacity: 0,
+                  }}
+                  animate={{
+                    y: '0',
+                    opacity: 1,
+                  }}
+                  transition={{
+                    type: 'tween',
+                    duration: 0.5,
+                    delay: 0.8,
                   }}
                 >
-                  &
-                </span>
-                <Link
-                  onMouseEnter={() => handleOnHover('jakz')}
-                  onMouseLeave={() => handleOnHover('odeng')}
-                >
-                  Jakz
-                </Link>
+                  <Button variant="primary">Follow us</Button>
+                  <Button variant="secondary">Discord</Button>
+                </motion.div>
               </Box>
+
+              <motion.div
+                initial={{
+                  y: '30px',
+                  opacity: 0,
+                }}
+                animate={{
+                  y: '0',
+                  opacity: 1,
+                }}
+                transition={{
+                  type: 'tween',
+                  duration: 0.5,
+                  delay: 1,
+                }}
+              >
+                <Box>
+                  By{' '}
+                  <Link onMouseEnter={() => handleOnHover('odeng')}>Oden</Link>
+                  <span
+                    style={{
+                      margin: '0 5px',
+                    }}
+                  >
+                    &
+                  </span>
+                  <Link
+                    onMouseEnter={() => handleOnHover('jakz')}
+                    onMouseLeave={() => handleOnHover('odeng')}
+                  >
+                    Jakz
+                  </Link>
+                </Box>
+              </motion.div>
             </ContentColumn>
           </Box>
         </Container>
@@ -163,7 +226,7 @@ const StyledMainContainer = styled('main', {
   },
 })
 
-const Title = styled('h1', {
+const Title = styled(motion.h1, {
   fontSize: '3rem',
   lineHeight: '1',
   fontWeight: 'bold',
@@ -178,7 +241,7 @@ const Title = styled('h1', {
   },
 })
 
-const Paragraph = styled('p', {
+const Paragraph = styled(motion.p, {
   lineHeight: '2',
   fontSize: '1rem',
   marginBottom: '2rem',
