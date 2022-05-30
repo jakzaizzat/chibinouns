@@ -27,7 +27,11 @@ export default function Homepage() {
 
   return (
     <StyledScreenContainer character={activeCharacter}>
-      <SyledCharacterImageContainer>
+      <SyledCharacterImageContainer
+        size={{
+          '@md': 'md',
+        }}
+      >
         <Image
           src={themeStyling.image}
           layout="fill"
@@ -40,7 +44,11 @@ export default function Homepage() {
         <Logo />
       </Container>
 
-      <StyledMainContainer>
+      <StyledMainContainer
+        size={{
+          '@md': 'md',
+        }}
+      >
         <Container>
           <Box
             css={{
@@ -56,12 +64,22 @@ export default function Homepage() {
             ></EmptyColumn>
             <ContentColumn
               viewport={{
-                '@md': 'md',
+                '@lg': 'md',
               }}
             >
               <Box>
-                <Title>We're still building, see you soon.</Title>
-                <Paragraph>
+                <Title
+                  size={{
+                    '@md': 'md',
+                  }}
+                >
+                  We're still building, see you soon.
+                </Title>
+                <Paragraph
+                  size={{
+                    '@md': 'md',
+                  }}
+                >
                   Web Generated Modular Interfaces is a collection of 10,000
                   randomly generated PFPPP’s (profile picture passion project).
                   We’re reserving 404 from the total supply for the future. No
@@ -118,29 +136,61 @@ const SyledCharacterImageContainer = styled('div', {
   position: 'absolute',
   left: '-50px',
   bottom: '0',
-  height: '400px',
-  width: '400px',
+  height: '300px',
+  width: '300px',
+
+  variants: {
+    size: {
+      md: {
+        height: '600px',
+        width: '600px',
+      },
+    },
+  },
 })
 
 const StyledMainContainer = styled('main', {
   display: 'flex',
   alignItems: 'center',
   position: 'relative',
-  height: 'calc(100vh - 200px)',
+
+  variants: {
+    size: {
+      md: {
+        height: 'calc(100vh - 200px)',
+      },
+    },
+  },
 })
 
 const Title = styled('h1', {
-  fontSize: '4rem',
+  fontSize: '3rem',
   lineHeight: '1',
   fontWeight: 'bold',
   marginBottom: '1rem',
+
+  variants: {
+    size: {
+      md: {
+        fontSize: '4rem',
+      },
+    },
+  },
 })
 
 const Paragraph = styled('p', {
   lineHeight: '2',
-  fontSize: '1.25rem',
+  fontSize: '1rem',
   marginBottom: '2rem',
   color: '#000',
+
+  variants: {
+    size: {
+      md: {
+        fontSize: '1.25rem',
+      },
+    },
+  },
 })
 
 const EmptyColumn = styled('div', {
