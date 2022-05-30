@@ -244,6 +244,7 @@ const Title = styled(motion.h1, {
   lineHeight: '1',
   fontWeight: 'bold',
   marginBottom: '1rem',
+  color: '#2c2b2b',
 
   variants: {
     size: {
@@ -258,7 +259,7 @@ const Paragraph = styled(motion.p, {
   lineHeight: '2',
   fontSize: '1rem',
   marginBottom: '2rem',
-  color: '#000',
+  color: '#363636',
 
   variants: {
     size: {
