@@ -7,8 +7,9 @@ import Link from '../../components/Link'
 import { styled } from '../../../stitches.config'
 import Box from '../../components/Box'
 import { motion } from 'framer-motion'
+import AnimatedCharacter from '../../components/AnimatedCharacter'
 
-type CharacterName = 'odeng' | 'jakz'
+export type CharacterName = 'odeng' | 'jakz'
 
 export default function Homepage() {
   const [activeCharacter, setActiveCharacter] = useState<CharacterName>('odeng')
@@ -17,43 +18,9 @@ export default function Homepage() {
     setActiveCharacter(character)
   }
 
-  const themeStyling = useMemo(() => {
-    return {
-      image:
-        activeCharacter === 'odeng'
-          ? '/images/characters/odeng_pfp.png'
-          : '/images/characters/jakz_pfp.png',
-    }
-  }, [activeCharacter])
-
   return (
     <StyledScreenContainer character={activeCharacter}>
-      <SyledCharacterImageContainer
-        key={activeCharacter}
-        size={{
-          '@md': 'md',
-        }}
-        initial={{
-          x: '30px',
-          opacity: 0,
-        }}
-        animate={{
-          x: '0',
-          opacity: 1,
-        }}
-        transition={{
-          type: 'tween',
-          duration: 0.5,
-        }}
-      >
-        <Image
-          src={themeStyling.image}
-          layout="fill"
-          alt="odeng"
-          className="transition-all"
-        />
-      </SyledCharacterImageContainer>
-
+      <AnimatedCharacter character={activeCharacter} />
       <Container>
         <Logo />
       </Container>
@@ -174,12 +141,7 @@ export default function Homepage() {
                   >
                     &
                   </span>
-                  <Link
-                    onMouseEnter={() => handleOnHover('jakz')}
-                    onMouseLeave={() => handleOnHover('odeng')}
-                  >
-                    Jakz
-                  </Link>
+                  <Link onMouseEnter={() => handleOnHover('jakz')}>Jakz</Link>
                 </Box>
               </motion.div>
             </ContentColumn>
@@ -203,23 +165,6 @@ const StyledScreenContainer = styled('section', {
       },
       odeng: {
         backgroundColor: 'rgb(185 185 187)',
-      },
-    },
-  },
-})
-
-const SyledCharacterImageContainer = styled(motion.div, {
-  position: 'absolute',
-  left: '-50px',
-  bottom: '0',
-  height: '300px',
-  width: '300px',
-
-  variants: {
-    size: {
-      md: {
-        height: '600px',
-        width: '600px',
       },
     },
   },
