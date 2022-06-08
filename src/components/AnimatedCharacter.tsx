@@ -12,13 +12,13 @@ type Props = {
 const CHARACTER_IMAGES = {
   odeng: {
     body: '/images/characters/odeng_body.png',
-    head: '/images/characters/odeng_head.png',
-    spec: '/images/characters/odeng_spec.png',
+    head: '/images/characters/updates/glasses.png',
+    spec: '/images/characters/updates/eye.png',
   },
   jakz: {
-    body: '/images/characters/jakz_body.png',
-    head: '/images/characters/jakz_head.png',
-    spec: '/images/characters/jakz_spec.png',
+    body: '/images/characters/odeng_body.png',
+    head: '/images/characters/updates/glasses.png',
+    spec: '/images/characters/updates/eye.png',
   },
 }
 
@@ -47,12 +47,16 @@ export default function AnimatedCharacter({ character }: Props) {
           duration: 0.5,
         }}
       >
-        <Image
+        <video autoPlay={true} controls={false} loop={true} muted={true}>
+          <source src={'/images/characters/background.mp4'} type="video/mp4" />
+        </video>
+
+        {/* <Image
           src={characterImage.body}
           layout="fill"
           alt="odeng"
           className="transition-all"
-        />
+        /> */}
 
         <Image
           src={characterImage.head}
@@ -82,13 +86,13 @@ export default function AnimatedCharacter({ character }: Props) {
 
 const StyledCharacterContainer = styled(motion.div, {
   position: 'absolute',
-  left: '-50px',
+  left: '0px',
   bottom: '0',
   height: '400px',
   width: '400px',
 
   '@media (min-width: 768px)': {
-    height: '600px',
-    width: '600px',
-  }
+    height: '500px',
+    width: '500px',
+  },
 })

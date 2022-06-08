@@ -142,6 +142,8 @@ const StyledScreenContainer = styled('section', {
   position: 'relative',
   transition: 'all 0.2s ease-in-out',
   backgroundColor: 'red',
+  backgroundImage: 'url(/images/characters/updates/bg.png)',
+  backgroundSize: 'cover',
 
   variants: {
     character: {
@@ -149,7 +151,7 @@ const StyledScreenContainer = styled('section', {
         backgroundColor: 'rgb(150 189 175)',
       },
       odeng: {
-        backgroundColor: 'rgb(185 185 187)',
+        backgroundColor: '#b5b7b9',
       },
     },
   },
@@ -196,7 +198,7 @@ const EmptyColumn = styled('div', {
   width: '0',
 
   '@media (min-width: 768px)': {
-    width: '25%',
+    width: '40%',
   },
 })
 
@@ -209,6 +211,6 @@ const ContentColumn = styled('div', {
   width: '100%',
 
   '@media (min-width: 768px)': {
-    width: '75%',
+    width: '60%',
   },
 })
