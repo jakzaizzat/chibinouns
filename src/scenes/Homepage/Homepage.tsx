@@ -37,25 +37,14 @@ export default function Homepage() {
               justifyContent: 'space-between',
             }}
           >
-            <EmptyColumn
-              viewport={{
-                '@md': 'md',
-              }}
-            ></EmptyColumn>
-            <ContentColumn
-              viewport={{
-                '@lg': 'md',
-              }}
-            >
+            <EmptyColumn></EmptyColumn>
+            <ContentColumn>
               <Box
                 css={{
                   marginBottom: '2rem',
                 }}
               >
                 <Title
-                  size={{
-                    '@md': 'md',
-                  }}
                   initial={{
                     y: '30px',
                     opacity: 0,
@@ -69,12 +58,9 @@ export default function Homepage() {
                     duration: 0.5,
                   }}
                 >
-                  We're still building, see you soon.
+                  We're still building, see you soon. ⌐◨-◨
                 </Title>
                 <Paragraph
-                  size={{
-                    '@md': 'md',
-                  }}
                   initial={{
                     y: '30px',
                     opacity: 0,
@@ -89,10 +75,10 @@ export default function Homepage() {
                     delay: 0.5,
                   }}
                 >
-                  Web Generated Modular Interfaces is a collection of 10,000
-                  randomly generated PFPPP’s (profile picture passion project).
-                  We’re reserving 404 from the total supply for the future. No
-                  roadmaps or promises, just vibes. ⌐◨-◨
+                  Chibinouns is a collections of chibi (ちび or チビ) cute mix
+                  with nouns culture generated PFPPP 's (profile picture passion
+                  project). We're inspired by Nouns and Wgmi Interfaces. No
+                  roadmaps or promises, just vibes.
                 </Paragraph>
 
                 <motion.div
@@ -190,12 +176,8 @@ const Title = styled(motion.h1, {
   marginBottom: '1rem',
   color: '#2c2b2b',
 
-  variants: {
-    size: {
-      md: {
-        fontSize: '4rem',
-      },
-    },
+  '@media (min-width: 768px)': {
+    fontSize: '4rem',
   },
 })
 
@@ -205,23 +187,16 @@ const Paragraph = styled(motion.p, {
   marginBottom: '2rem',
   color: '#363636',
 
-  variants: {
-    size: {
-      md: {
-        fontSize: '1.25rem',
-      },
-    },
+  '@media (min-width: 768px)': {
+    fontSize: '1.5rem',
   },
 })
 
 const EmptyColumn = styled('div', {
   width: '0',
-  variants: {
-    viewport: {
-      md: {
-        width: '25%',
-      },
-    },
+
+  '@media (min-width: 768px)': {
+    width: '25%',
   },
 })
 
@@ -233,11 +208,7 @@ const ContentColumn = styled('div', {
   height: '50vh',
   width: '100%',
 
-  variants: {
-    viewport: {
-      md: {
-        width: '70%',
-      },
-    },
+  '@media (min-width: 768px)': {
+    width: '75%',
   },
 })

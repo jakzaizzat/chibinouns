@@ -4,8 +4,13 @@ import NftLink from './NFtLink'
 import Trait from './Trait'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
+import { INft } from './Nft'
 
-export default function NftModal() {
+type Props = {
+  nft: INft
+}
+
+export default function NftModal({nft} : Props) {
   return (
     <StyledContainer>
       <video
@@ -20,17 +25,15 @@ export default function NftModal() {
       >
         <source
           data-testid="AssetMedia--video"
-          src="https://openseauserdata.com/files/1e0598c1ca3f6f4b382b0aa5aa4c756f.mp4#t=0.001"
+          src={nft.videoUrl}
           type="video/mp4"
         />
       </video>
       <StyledContent>
         <Box>
-          <StyledTitle>Chibizen #6 - Megamann X Overdrive</StyledTitle>
+          <StyledTitle>Chibizen #{nft.id} - {nft.name}</StyledTitle>
           <StyledDescription>
-            六 (Roku) = Six . The power of six is Mega. That's the origin of
-            Megamann (Rockmann). The overdrive feature is available to try in
-            Megamann X 6 (Playstation one). Charge up and Go!
+            {nft.description}
           </StyledDescription>
           <StyledScrollArea>
             <ScrollArea.Viewport>

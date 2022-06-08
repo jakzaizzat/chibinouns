@@ -1,18 +1,14 @@
 import { styled } from '../../../stitches.config'
 import Nft from './Nft'
-import NftModal from './NftModal'
+
+import { COLLECTIONS } from '../../../constants/collections'
 
 export default function MainGallery() {
   return (
     <StyledNftContainer>
-      <Nft />
-      <Nft />
-      <Nft />
-      <Nft />
-      <Nft />
-      <Nft />
-      <Nft />
-      <Nft />
+      {COLLECTIONS.map((collection) => (
+        <Nft key={collection.id} nft={collection} />
+      ))}
     </StyledNftContainer>
   )
 }

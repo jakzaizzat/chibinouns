@@ -34,9 +34,6 @@ export default function AnimatedCharacter({ character }: Props) {
     <div ref={ref}>
       <StyledCharacterContainer
         key={character}
-        size={{
-          '@md': 'md',
-        }}
         initial={{
           x: '30px',
           opacity: 0,
@@ -87,15 +84,11 @@ const StyledCharacterContainer = styled(motion.div, {
   position: 'absolute',
   left: '-50px',
   bottom: '0',
-  height: '300px',
-  width: '300px',
+  height: '400px',
+  width: '400px',
 
-  variants: {
-    size: {
-      md: {
-        height: '600px',
-        width: '600px',
-      },
-    },
-  },
+  '@media (min-width: 768px)': {
+    height: '600px',
+    width: '600px',
+  }
 })

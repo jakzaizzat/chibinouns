@@ -4,26 +4,34 @@ import { motion } from 'framer-motion'
 import * as Dialog from '@radix-ui/react-dialog'
 import NftModal from './NftModal'
 
-export default function Nft() {
+export type INft = {
+  id: string
+  name: string
+  description: string
+  imageUrl: string
+  videoUrl: string
+}
+
+export default function Nft({ nft }: { nft: INft }) {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
         <StyledNftContainer>
           <StyledImage
-            src="https://lh3.googleusercontent.com/1j34uEgOVvBaoAm40V9yREgDBtfGBCJFWR8UrsAJmEYw_zCNtwiJ_SyKKjOW5uVerfAfHTOoEOj1M8hGsDVzVNs_1JWzrpv-RteC"
+            src={nft.imageUrl}
             height={400}
             width={400}
             alt="odeng"
           />
           <StyledText>
-            Chibizen #6 <StyledName>Megamann X Overdrive</StyledName>
+            Chibizen #{nft.id} <StyledName> {nft.name}</StyledName>
           </StyledText>
         </StyledNftContainer>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Overlay>
           <Content>
-            <NftModal />
+            <NftModal nft={nft} />
           </Content>
         </Overlay>
       </Dialog.Portal>
