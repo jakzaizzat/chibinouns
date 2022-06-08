@@ -2,10 +2,11 @@ import { styled } from '../../stitches.config'
 
 type Props = {
   children: React.ReactNode
+  css?: Object
 }
 
-export default function Container({ children }: Props) {
-  return <StyledContainer>{children}</StyledContainer>
+export default function Container({ children, css }: Props) {
+  return <StyledContainer css={{ ...css }}>{children}</StyledContainer>
 }
 
 const StyledContainer = styled('section', {

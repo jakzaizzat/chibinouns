@@ -8,6 +8,7 @@ import { styled } from '../../../stitches.config'
 import Box from '../../components/Box'
 import { motion } from 'framer-motion'
 import AnimatedCharacter from '../../components/AnimatedCharacter'
+import Navigation from '../../components/Navigation'
 
 export type CharacterName = 'odeng' | 'jakz'
 
@@ -21,9 +22,7 @@ export default function Homepage() {
   return (
     <StyledScreenContainer character={activeCharacter}>
       <AnimatedCharacter character={activeCharacter} />
-      <Container>
-        <Logo />
-      </Container>
+      <Navigation />
 
       <StyledMainContainer
         size={{

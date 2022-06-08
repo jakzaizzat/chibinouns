@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
     "@splinetool/react-spline": "^2.2.1",
     "@splinetool/runtime": "^0.9.59",
     "@stitches/react": "^1.2.8",

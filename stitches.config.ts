@@ -1,4 +1,14 @@
 import { createStitches } from '@stitches/react'
+import {
+  gray,
+  blue,
+  red,
+  green,
+  grayDark,
+  blueDark,
+  redDark,
+  greenDark,
+} from '@radix-ui/colors'
 
 export const {
   styled,
@@ -12,6 +22,10 @@ export const {
 } = createStitches({
   theme: {
     colors: {
+      ...gray,
+      ...blue,
+      ...red,
+      ...green,
       primary: '#0070f3',
       secondary: '#ff4081',
       tertiary: '#f50057',
