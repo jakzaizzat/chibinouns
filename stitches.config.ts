@@ -26,6 +26,7 @@ export const {
       ...blue,
       ...red,
       ...green,
+      black: '#000',
       primary: '#0070f3',
       secondary: '#ff4081',
       tertiary: '#f50057',

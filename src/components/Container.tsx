@@ -10,7 +10,7 @@ export default function Container({ children, css }: Props) {
 }
 
 const StyledContainer = styled('section', {
-  maxWidth: '1200px',
+  maxWidth: '1400px',
   padding: '1rem',
   margin: '0 auto',
 })
