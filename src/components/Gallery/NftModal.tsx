@@ -2,6 +2,8 @@ import { styled } from '../../../stitches.config'
 import Box from '../Box'
 import NftLink from './NFtLink'
 import Trait from './Trait'
+import * as ScrollArea from '@radix-ui/react-scroll-area'
+import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 
 export default function NftModal() {
   return (
@@ -30,15 +32,23 @@ export default function NftModal() {
             Megamann (Rockmann). The overdrive feature is available to try in
             Megamann X 6 (Playstation one). Charge up and Go!
           </StyledDescription>
-          <StyledTraitContainer>
-            <Trait name="Animation" value="Megaman Animation"></Trait>
-            <Trait name="Animation" value="Megaman Animation"></Trait>
-            <Trait name="Animation" value="Megaman Animation"></Trait>
-            <Trait name="Animation" value="Megaman Animation"></Trait>
-            <Trait name="Animation" value="Megaman Animation"></Trait>
-            <Trait name="Animation" value="Megaman Animation"></Trait>
-            <Trait name="Animation" value="Megaman Animation"></Trait>
-          </StyledTraitContainer>
+          <StyledScrollArea>
+            <ScrollArea.Viewport>
+              <StyledTraitContainer>
+                <Trait name="Animation" value="Megaman Animation"></Trait>
+                <Trait name="Animation" value="Megaman Animation"></Trait>
+                <Trait name="Animation" value="Megaman Animation"></Trait>
+                <Trait name="Animation" value="Megaman Animation"></Trait>
+                <Trait name="Animation" value="Megaman Animation"></Trait>
+                <Trait name="Animation" value="Megaman Animation"></Trait>
+                <Trait name="Animation" value="Megaman Animation"></Trait>
+              </StyledTraitContainer>
+            </ScrollArea.Viewport>
+            <ScrollArea.Scrollbar orientation="horizontal">
+              <ScrollArea.Thumb />
+            </ScrollArea.Scrollbar>
+            <ScrollArea.Corner />
+          </StyledScrollArea>
         </Box>
         <StyledCallToAction>
           <NftLink />
@@ -51,6 +61,10 @@ export default function NftModal() {
 const StyledContainer = styled('section', {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
+
+  '@media (max-width: 768px)': {
+    gridTemplateColumns: '1fr',
+  },
 })
 
 const StyledContent = styled('div', {
@@ -58,6 +72,21 @@ const StyledContent = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
+
+  '@media (max-width: 768px)': {
+    padding: '10px 0',
+    overflowY: 'auto',
+  },
+})
+
+const StyledScrollArea = styled(ScrollAreaPrimitive.Root, {
+  width: '100%',
+  borderRadius: 4,
+  overflow: 'hidden',
+
+  '@media (max-width: 768px)': {
+    height: '100px',
+  },
 })
 
 const StyledTitle = styled('h3', {
@@ -75,6 +104,10 @@ const StyledTraitContainer = styled('section', {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
   gap: '12px',
+
+  '@media (max-width: 768px)': {
+    display: 'flex',
+  },
 })
 
 const StyledCallToAction = styled('div', {})

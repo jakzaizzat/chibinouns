@@ -11,8 +11,8 @@ export default function Nft() {
         <StyledNftContainer>
           <StyledImage
             src="https://lh3.googleusercontent.com/1j34uEgOVvBaoAm40V9yREgDBtfGBCJFWR8UrsAJmEYw_zCNtwiJ_SyKKjOW5uVerfAfHTOoEOj1M8hGsDVzVNs_1JWzrpv-RteC"
-            height={200}
-            width={200}
+            height={400}
+            width={400}
             alt="odeng"
           />
           <StyledText>

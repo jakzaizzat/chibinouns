@@ -9,6 +9,11 @@ export default function Gallery() {
         display: 'grid',
         gridTemplateColumns: '1fr 4fr',
         gap: '1rem',
+        
+        // TODO: replace with stitches variable
+        '@media (max-width: 768px)': {
+          gridTemplateColumns: '1fr',
+        }
       }}
     >
       <Sidebar />

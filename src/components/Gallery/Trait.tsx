@@ -19,6 +19,10 @@ const StyledContainer = styled('section', {
   padding: '8px',
   fontSize: '.8rem',
   color: '$blue12',
+
+  '@media (max-width: 768px)': {
+    minWidth: '150px',
+  }
 })
 
 const StyledTraitValue = styled('p', {
