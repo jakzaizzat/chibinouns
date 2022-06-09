@@ -13,7 +13,7 @@ import { Box } from '../../components/Box'
 export type CharacterName = 'odeng' | 'jakz'
 
 export default function Homepage() {
-  const [activeCharacter, setActiveCharacter] = useState<CharacterName>('odeng')
+  const [activeCharacter, setActiveCharacter] = useState<CharacterName>('jakz')
 
   const handleOnHover = (character: CharacterName) => {
     setActiveCharacter(character)
@@ -21,24 +21,6 @@ export default function Homepage() {
 
   return (
     <StyledScreenContainer character={activeCharacter}>
-      {/* <video
-        autoPlay={true}
-        controls={false}
-        loop={true}
-        muted={true}
-        playsInline={true}
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          zIndex: 0,
-          objectFit: 'cover',
-        }}
-      >
-        <source src={'/images/characters/updates/test.mp4'} type="video/mp4" />
-      </video> */}
       <AnimatedCharacter character={activeCharacter} />
       <Navigation />
 
@@ -159,20 +141,16 @@ const StyledScreenContainer = styled('section', {
   height: '100vh',
   position: 'relative',
   transition: 'all 0.2s ease-in-out',
-  backgroundColor: 'red',
-  // backgroundImage: 'url(/images/characters/updates/bg_jakz.mp4)',
-  backgroundSize: 'cover',
+  backgroundColor: 'rgb(255,255,255)',
+  overflow: 'hidden',
 
   variants: {
     character: {
       jakz: {
-        // backgroundImage: 'url(/images/characters/updates/bg_jakz.mp4)',
         backgroundColor: 'rgb(223,249,249)',
       },
       odeng: {
-        // backgroundImage: 'url(/images/characters/updates/test_bg.jpeg)',
         backgroundColor: 'rgb(255,255,255)',
-        // backgroundColor: 'rgb(247,247,247)',
       },
     },
   },

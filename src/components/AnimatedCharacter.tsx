@@ -58,24 +58,17 @@ export default function AnimatedCharacter({ character }: Props) {
         </StyledVideo>
 
         {/* <Image
-          src={characterImage.body}
-          layout="fill"
-          alt="odeng"
-          className="transition-all"
-        /> */}
-
-        {/* <Image
           src={characterImage.head}
           layout="fill"
           alt="odeng"
           className="transition-all"
           style={{
-            transform: `translate(${docX * 0.003}px, ${docY * 0.003}px)`,
+            transform: `translate(${docX * 0.01}px, ${docY * 0.01}px)`,
             transitionProperty: 'all 0.5s ease-in-out',
           }}
-        />
+        /> */}
 
-        <Image
+        {/* <Image
           src={characterImage.spec}
           layout="fill"
           alt="odeng"
@@ -110,6 +103,6 @@ const StyledCharacterContainer = styled(motion.div, {
 
 const StyledVideo = styled('video', {
   margin: 0,
-  padding: '0px',
+  // padding: '0px',
   border: 0,
 })
