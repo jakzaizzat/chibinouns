@@ -1,13 +1,11 @@
+import * as ScrollArea from '@radix-ui/react-scroll-area'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { keyframes, styled } from '../../../../stitches.config'
 import { Grid } from '../../Grid'
 import TraitCheckbox from './TraitCheckbox'
-
-const traitValue = {
-  name: 'Animation',
-  value: 'Normal Walk',
-  options: ['Normal Walk', 'Walking', "Abloh's Thank You"],
-}
+import { BoxIcon, MinusIcon, PlusIcon } from '@radix-ui/react-icons'
+import { Flex } from '../../Flex'
+import { useState } from 'react'
 
 type IOption = {
   name: string
@@ -20,21 +18,47 @@ type Props = {
 }
 
 export default function TraitSelect({ name, options }: Props) {
+  const [open, setOpen] = useState(false)
+
   return (
     <>
-      <Collapsible.Root>
-        <Collapsible.Trigger>{name}</Collapsible.Trigger>
-        <CollapsibleContent>
-          <Grid
+      <Collapsible.Root open={open} onOpenChange={setOpen}>
+        <Collapsible.Trigger asChild>
+          <Flex
+            as="button"
             css={{
-              gridTemplateColumns: '1fr',
-              gap: '8px',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              width: '100%',
             }}
           >
-            {options.map((option, index) => (
-              <TraitCheckbox key={index} name={option.name}></TraitCheckbox>
-            ))}
-          </Grid>
+            {name}
+            {open ? <MinusIcon /> : <PlusIcon />}
+          </Flex>
+        </Collapsible.Trigger>
+        <CollapsibleContent>
+          <StyledScrollArea>
+            <StyledViewport>
+              <Grid
+                css={{
+                  gap: '12px',
+                  backgroundColor: '#ffffff',
+                }}
+              >
+                {options.map((option, index) => (
+                  <TraitCheckbox
+                    key={index}
+                    name={option.name}
+                    count={option.count}
+                  ></TraitCheckbox>
+                ))}
+              </Grid>
+            </StyledViewport>
+            <StyledScrollbar orientation="vertical">
+              <ScrollArea.Thumb />
+            </StyledScrollbar>
+            <ScrollArea.Corner />
+          </StyledScrollArea>
         </CollapsibleContent>
       </Collapsible.Root>
     </>
@@ -53,7 +77,33 @@ const close = keyframes({
 
 const CollapsibleContent = styled(Collapsible.Content, {
   padding: '8px 0',
-  overflow: 'hidden',
   '&[data-state="open"]': { animation: `${open} 300ms ease-out forwards` },
   '&[data-state="closed"]': { animation: `${close} 300ms ease-out forwards` },
+})
+
+const StyledScrollArea = styled(ScrollArea.Root, {
+  height: 'inherit',
+  maxHeight: 150,
+  width: '100%',
+  padding: '0 16px 0 0',
+})
+
+const StyledViewport = styled(ScrollArea.Viewport, {
+  width: '100%',
+  height: '100%',
+  borderRadius: 'inherit',
+})
+
+const StyledScrollbar = styled(ScrollArea.Scrollbar, {
+  display: 'flex',
+  userSelect: 'none',
+  touchAction: 'none',
+  background: '$gray4',
+  transition: 'background 160ms ease-out',
+  '&:hover': { background: '$gray11' },
+  '&[data-orientation="vertical"]': { width: 2 },
+  '&[data-orientation="horizontal"]': {
+    flexDirection: 'column',
+    height: 10,
+  },
 })

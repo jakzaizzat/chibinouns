@@ -2,7 +2,6 @@ import { styled } from '../../../stitches.config'
 import NftLink from './NFtLink'
 import Trait from './Trait'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
-import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 import { INft } from './Nft'
 import { Box } from '../Box'
 
@@ -82,7 +81,7 @@ const StyledContent = styled('div', {
   },
 })
 
-const StyledScrollArea = styled(ScrollAreaPrimitive.Root, {
+const StyledScrollArea = styled(ScrollArea.Root, {
   width: '100%',
   borderRadius: 4,
   overflow: 'hidden',
