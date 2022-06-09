@@ -1,16 +1,16 @@
 import { styled } from '../../../stitches.config'
-import Box from '../Box'
 import NftLink from './NFtLink'
 import Trait from './Trait'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 import { INft } from './Nft'
+import { Box } from '../Box'
 
 type Props = {
   nft: INft
 }
 
-export default function NftModal({nft} : Props) {
+export default function NftModal({ nft }: Props) {
   return (
     <StyledContainer>
       <video
@@ -31,10 +31,10 @@ export default function NftModal({nft} : Props) {
       </video>
       <StyledContent>
         <Box>
-          <StyledTitle>Chibizen #{nft.id} - {nft.name}</StyledTitle>
-          <StyledDescription>
-            {nft.description}
-          </StyledDescription>
+          <StyledTitle>
+            Chibizen #{nft.id} - {nft.name}
+          </StyledTitle>
+          <StyledDescription>{nft.description}</StyledDescription>
           <StyledScrollArea>
             <ScrollArea.Viewport>
               <StyledTraitContainer>

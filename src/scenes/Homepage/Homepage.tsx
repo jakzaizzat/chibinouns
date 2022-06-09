@@ -5,10 +5,10 @@ import Logo from '../../components/Logo'
 import Button from '../../components/Button'
 import Link from '../../components/Link'
 import { styled } from '../../../stitches.config'
-import Box from '../../components/Box'
 import { motion } from 'framer-motion'
 import AnimatedCharacter from '../../components/AnimatedCharacter'
 import Navigation from '../../components/Navigation'
+import { Box } from '../../components/Box'
 
 export type CharacterName = 'odeng' | 'jakz'
 
