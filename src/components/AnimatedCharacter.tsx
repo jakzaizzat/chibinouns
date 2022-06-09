@@ -64,7 +64,7 @@ export default function AnimatedCharacter({ character }: Props) {
           className="transition-all"
         /> */}
 
-        <Image
+        {/* <Image
           src={characterImage.head}
           layout="fill"
           alt="odeng"
@@ -89,26 +89,7 @@ export default function AnimatedCharacter({ character }: Props) {
             // transform: `translate(0px, 25px)`,
             transitionProperty: 'all 0.5s ease-in-out',
           }}
-        />
-
-        {/* <svg
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-          }}
-        >
-          <rect
-            height={20}
-            width={20}
-            x={250}
-            y={250}
-            style={{
-              fill: 'red',
-              transform: 'rotate(45deg)',
-            }}
-          ></rect>
-        </svg> */}
+        /> */}
       </StyledCharacterContainer>
     </div>
   )
@@ -129,6 +110,6 @@ const StyledCharacterContainer = styled(motion.div, {
 
 const StyledVideo = styled('video', {
   margin: 0,
-  padding: 0,
+  padding: '0px',
   border: 0,
 })

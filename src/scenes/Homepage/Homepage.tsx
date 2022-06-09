@@ -37,7 +37,7 @@ export default function Homepage() {
           objectFit: 'cover',
         }}
       >
-        <source src={'/images/characters/updates/bg_jakz.mp4'} type="video/mp4" />
+        <source src={'/images/characters/updates/test.mp4'} type="video/mp4" />
       </video> */}
       <AnimatedCharacter character={activeCharacter} />
       <Navigation />
@@ -161,17 +161,18 @@ const StyledScreenContainer = styled('section', {
   transition: 'all 0.2s ease-in-out',
   backgroundColor: 'red',
   // backgroundImage: 'url(/images/characters/updates/bg_jakz.mp4)',
-  // backgroundSize: 'cover',
+  backgroundSize: 'cover',
 
   variants: {
     character: {
       jakz: {
         // backgroundImage: 'url(/images/characters/updates/bg_jakz.mp4)',
-        backgroundColor: '#a1c3b8',
+        backgroundColor: 'rgb(223,249,249)',
       },
       odeng: {
-        // backgroundColor: '#ecebec',
-        backgroundColor: '#ecebec',
+        // backgroundImage: 'url(/images/characters/updates/test_bg.jpeg)',
+        backgroundColor: 'rgb(255,255,255)',
+        // backgroundColor: 'rgb(247,247,247)',
       },
     },
   },
