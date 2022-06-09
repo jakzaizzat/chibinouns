@@ -82,9 +82,33 @@ export default function AnimatedCharacter({ character }: Props) {
           className="transition-all"
           style={{
             transform: `translate(${docX * 0.005}px, ${docY * 0.005}px)`,
+
+            // Left : x: -25px
+            // Right : x: 0px
+            // Top : y: -25px
+            // transform: `translate(0px, 25px)`,
             transitionProperty: 'all 0.5s ease-in-out',
           }}
         />
+
+        {/* <svg
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+          }}
+        >
+          <rect
+            height={20}
+            width={20}
+            x={250}
+            y={250}
+            style={{
+              fill: 'red',
+              transform: 'rotate(45deg)',
+            }}
+          ></rect>
+        </svg> */}
       </StyledCharacterContainer>
     </div>
   )

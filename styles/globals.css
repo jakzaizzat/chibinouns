@@ -5,3 +5,10 @@
 html {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+video {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(#fff,#000);
+  vertical-align: baseline;
+}

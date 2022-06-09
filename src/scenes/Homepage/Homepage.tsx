@@ -21,6 +21,24 @@ export default function Homepage() {
 
   return (
     <StyledScreenContainer character={activeCharacter}>
+      {/* <video
+        autoPlay={true}
+        controls={false}
+        loop={true}
+        muted={true}
+        playsInline={true}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          zIndex: 0,
+          objectFit: 'cover',
+        }}
+      >
+        <source src={'/images/characters/updates/bg_jakz.mp4'} type="video/mp4" />
+      </video> */}
       <AnimatedCharacter character={activeCharacter} />
       <Navigation />
 
@@ -141,19 +159,19 @@ const StyledScreenContainer = styled('section', {
   height: '100vh',
   position: 'relative',
   transition: 'all 0.2s ease-in-out',
-  // backgroundColor: 'red',
-  // backgroundImage: 'url(/images/characters/updates/bg.jpg)',
-  backgroundSize: 'cover',
+  backgroundColor: 'red',
+  // backgroundImage: 'url(/images/characters/updates/bg_jakz.mp4)',
+  // backgroundSize: 'cover',
 
   variants: {
     character: {
       jakz: {
-        backgroundImage: 'url(/images/characters/updates/bg_jakz.png)',
-        // backgroundColor: 'rgb(150 189 175)',
+        // backgroundImage: 'url(/images/characters/updates/bg_jakz.mp4)',
+        backgroundColor: '#a1c3b8',
       },
       odeng: {
-        // backgroundColor: '#b5b7b9',
-        backgroundImage: 'url(/images/characters/updates/bg.jpg)',
+        // backgroundColor: '#ecebec',
+        backgroundColor: '#ecebec',
       },
     },
   },
