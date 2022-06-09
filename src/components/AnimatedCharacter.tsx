@@ -11,14 +11,14 @@ type Props = {
 
 const CHARACTER_IMAGES = {
   odeng: {
-    body: '/images/characters/odeng_body.png',
+    body: '/images/characters/updates/background.mp4',
     head: '/images/characters/updates/glasses.png',
     spec: '/images/characters/updates/eye.png',
   },
   jakz: {
-    body: '/images/characters/odeng_body.png',
-    head: '/images/characters/updates/glasses.png',
-    spec: '/images/characters/updates/eye.png',
+    body: '/images/characters/updates/background_jakz.mp4',
+    head: '/images/characters/updates/glasses_jakz.png',
+    spec: '/images/characters/updates/eye_jakz.png',
   },
 }
 
@@ -47,9 +47,15 @@ export default function AnimatedCharacter({ character }: Props) {
           duration: 0.5,
         }}
       >
-        <video autoPlay={true} controls={false} loop={true} muted={true}>
-          <source src={'/images/characters/background.mp4'} type="video/mp4" />
-        </video>
+        <StyledVideo
+          autoPlay={true}
+          controls={false}
+          loop={true}
+          muted={true}
+          playsInline={true}
+        >
+          <source src={characterImage.body} type="video/mp4" />
+        </StyledVideo>
 
         {/* <Image
           src={characterImage.body}
@@ -95,4 +101,10 @@ const StyledCharacterContainer = styled(motion.div, {
     height: '500px',
     width: '500px',
   },
+})
+
+const StyledVideo = styled('video', {
+  margin: 0,
+  padding: 0,
+  border: 0,
 })

@@ -141,17 +141,19 @@ const StyledScreenContainer = styled('section', {
   height: '100vh',
   position: 'relative',
   transition: 'all 0.2s ease-in-out',
-  backgroundColor: 'red',
-  backgroundImage: 'url(/images/characters/updates/bg.png)',
+  // backgroundColor: 'red',
+  // backgroundImage: 'url(/images/characters/updates/bg.jpg)',
   backgroundSize: 'cover',
 
   variants: {
     character: {
       jakz: {
-        backgroundColor: 'rgb(150 189 175)',
+        backgroundImage: 'url(/images/characters/updates/bg_jakz.png)',
+        // backgroundColor: 'rgb(150 189 175)',
       },
       odeng: {
-        backgroundColor: '#b5b7b9',
+        // backgroundColor: '#b5b7b9',
+        backgroundImage: 'url(/images/characters/updates/bg.jpg)',
       },
     },
   },
