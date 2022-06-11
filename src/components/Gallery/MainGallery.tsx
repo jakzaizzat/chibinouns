@@ -1,12 +1,14 @@
 import { styled } from '../../../stitches.config'
-import Nft from './Nft'
+import Nft, { INft } from './Nft'
 
-import { COLLECTIONS } from '../../../constants/collections'
+type Props = {
+  collections: INft[]
+}
 
-export default function MainGallery() {
+export default function MainGallery({ collections }: Props) {
   return (
     <StyledNftContainer>
-      {COLLECTIONS.map((collection) => (
+      {collections.map((collection) => (
         <Nft key={collection.id} nft={collection} />
       ))}
     </StyledNftContainer>
@@ -15,6 +17,12 @@ export default function MainGallery() {
 
 const StyledNftContainer = styled('section', {
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-  gap: '16px',
+  gridTemplateColumns:  'repeat(auto-fit, minmax(200px, 1fr))',
+
+  justifyContent: 'center',
+  gap: '24px',
+
+  '@media (max-width: 768px)': {
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+  },
 })
