@@ -4,12 +4,18 @@ import { motion } from 'framer-motion'
 import * as Dialog from '@radix-ui/react-dialog'
 import NftModal from './NftModal'
 
+type ITraits = {
+  trait_type: string
+  value: string
+}
+
 export type INft = {
   id: string
   name: string
   description: string
   imageUrl: string
   videoUrl: string
+  attributes: ITraits[]
 }
 
 export default function Nft({ nft }: { nft: INft }) {

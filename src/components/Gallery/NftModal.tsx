@@ -37,13 +37,13 @@ export default function NftModal({ nft }: Props) {
           <StyledScrollArea>
             <ScrollArea.Viewport>
               <StyledTraitContainer>
-                <Trait name="Animation" value="Megaman Animation"></Trait>
-                <Trait name="Animation" value="Megaman Animation"></Trait>
-                <Trait name="Animation" value="Megaman Animation"></Trait>
-                <Trait name="Animation" value="Megaman Animation"></Trait>
-                <Trait name="Animation" value="Megaman Animation"></Trait>
-                <Trait name="Animation" value="Megaman Animation"></Trait>
-                <Trait name="Animation" value="Megaman Animation"></Trait>
+                {nft.attributes?.map((trait) => (
+                  <Trait
+                    key={trait.trait_type}
+                    name={trait.trait_type}
+                    value={trait.value}
+                  />
+                ))}
               </StyledTraitContainer>
             </ScrollArea.Viewport>
             <ScrollArea.Scrollbar orientation="horizontal">
