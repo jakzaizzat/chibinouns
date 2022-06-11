@@ -13,7 +13,7 @@ import { Box } from '../../components/Box'
 export type CharacterName = 'odeng' | 'jakz'
 
 export default function Homepage() {
-  const [activeCharacter, setActiveCharacter] = useState<CharacterName>('jakz')
+  const [activeCharacter, setActiveCharacter] = useState<CharacterName>('odeng')
 
   const handleOnHover = (character: CharacterName) => {
     setActiveCharacter(character)
@@ -118,7 +118,7 @@ export default function Homepage() {
               >
                 <Box>
                   By{' '}
-                  <Link onMouseEnter={() => handleOnHover('odeng')}>Oden</Link>
+                  <Link onMouseEnter={() => handleOnHover('odeng')}>Odeng</Link>
                   <span
                     style={{
                       margin: '0 5px',

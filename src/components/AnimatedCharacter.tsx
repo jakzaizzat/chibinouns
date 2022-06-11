@@ -13,12 +13,14 @@ const CHARACTER_IMAGES = {
   odeng: {
     body: '/images/characters/updates/background.mp4',
     head: '/images/characters/updates/glasses.png',
-    spec: '/images/characters/updates/eye.png',
+    spec: '/images/characters/updates/odeng_spec.png',
+    eyes: '/images/characters/updates/odeng_eyes.png',
   },
   jakz: {
     body: '/images/characters/updates/background_jakz.mp4',
     head: '/images/characters/updates/glasses_jakz.png',
-    spec: '/images/characters/updates/eye_jakz.png',
+    spec: '/images/characters/updates/jakz_spec.png',
+    eyes: '/images/characters/updates/jakz_eyes.png',
   },
 }
 
@@ -57,32 +59,27 @@ export default function AnimatedCharacter({ character }: Props) {
           <source src={characterImage.body} type="video/mp4" />
         </StyledVideo>
 
-        {/* <Image
-          src={characterImage.head}
-          layout="fill"
-          alt="odeng"
-          className="transition-all"
-          style={{
-            transform: `translate(${docX * 0.01}px, ${docY * 0.01}px)`,
-            transitionProperty: 'all 0.5s ease-in-out',
-          }}
-        /> */}
-
-        {/* <Image
+        <Image
           src={characterImage.spec}
           layout="fill"
           alt="odeng"
           className="transition-all"
           style={{
             transform: `translate(${docX * 0.005}px, ${docY * 0.005}px)`,
-
-            // Left : x: -25px
-            // Right : x: 0px
-            // Top : y: -25px
-            // transform: `translate(0px, 25px)`,
             transitionProperty: 'all 0.5s ease-in-out',
           }}
-        /> */}
+        />
+
+        <Image
+          src={characterImage.eyes}
+          layout="fill"
+          alt="odeng"
+          className="transition-all"
+          style={{
+            transform: `translate(${docX * 0.005}px, ${docY * 0.005}px)`,
+            transitionProperty: 'all 0.5s ease-in-out',
+          }}
+        />
       </StyledCharacterContainer>
     </div>
   )
