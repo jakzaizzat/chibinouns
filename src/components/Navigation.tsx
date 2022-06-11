@@ -18,9 +18,9 @@ export default function Navigation() {
         <Link href="/gallery">
           <StyledLink>Gallery</StyledLink>
         </Link>
-        <Link href="/gallery">
+        {/* <Link href="/gallery">
           <StyledLink>Guest book</StyledLink>
-        </Link>
+        </Link> */}
       </StyledListContainer>
     </Container>
   )
