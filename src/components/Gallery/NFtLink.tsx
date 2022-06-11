@@ -1,6 +1,10 @@
 import { styled } from '../../../stitches.config'
 
-export default function NftLink() {
+type Props = {
+  link: string
+}
+
+export default function NftLink({ link }: Props) {
   return (
     <StyledContainer>
       <StyledIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
@@ -8,7 +12,7 @@ export default function NftLink() {
       </StyledIcon>
 
       <a
-        href="https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/38145258425411010250529754234651290254187327002513803463483378027998134403073"
+        href={link}
         target="_blank"
         rel="noopener noreferrer"
       >

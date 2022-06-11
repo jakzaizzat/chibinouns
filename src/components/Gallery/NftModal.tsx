@@ -53,7 +53,7 @@ export default function NftModal({ nft }: Props) {
           </StyledScrollArea>
         </Box>
         <StyledCallToAction>
-          <NftLink />
+          <NftLink link={nft.link} />
         </StyledCallToAction>
       </StyledContent>
     </StyledContainer>

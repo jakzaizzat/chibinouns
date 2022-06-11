@@ -15,6 +15,7 @@ export type INft = {
   description: string
   imageUrl: string
   videoUrl: string
+  link: string
   attributes: ITraits[]
 }
 
