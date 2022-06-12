@@ -89,8 +89,8 @@ const StyledCharacterContainer = styled(motion.div, {
   position: 'absolute',
   left: '0px',
   bottom: '0',
-  height: '400px',
-  width: '400px',
+  height: '200px',
+  width: '200px',
 
   '@media (min-width: 768px)': {
     height: '500px',

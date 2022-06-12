@@ -184,7 +184,7 @@ const StyledMainContainer = styled('main', {
 })
 
 const Title = styled(motion.h1, {
-  fontSize: '3rem',
+  fontSize: '2rem',
   lineHeight: '1',
   fontWeight: 'bold',
   marginBottom: '1rem',
