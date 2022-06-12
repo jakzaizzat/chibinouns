@@ -1,9 +1,7 @@
-import { useMemo, useState } from 'react'
-import Image from 'next/image'
+import { useState } from 'react'
 import Container from '../../components/Container'
-import Logo from '../../components/Logo'
 import { Button } from '../../components/Button'
-import Link from '../../components/Link'
+import { StyledLink } from '../../components/Link'
 import { styled } from '../../../stitches.config'
 import { motion } from 'framer-motion'
 import AnimatedCharacter from '../../components/AnimatedCharacter'
@@ -16,9 +14,7 @@ export type CharacterName = 'odeng' | 'jakz'
 export default function Homepage() {
   const [activeCharacter, setActiveCharacter] = useState<CharacterName>('odeng')
 
-  const coolModeRef = useCoolMode(
-    '/images/glasses.png',
-  )
+  const coolModeRef = useCoolMode('/images/glasses.png')
 
   const handleOnHover = (character: CharacterName) => {
     setActiveCharacter(character)
@@ -29,11 +25,7 @@ export default function Homepage() {
       <AnimatedCharacter character={activeCharacter} />
       <Navigation />
 
-      <StyledMainContainer
-        size={{
-          '@md': 'md',
-        }}
-      >
+      <StyledMainContainer>
         <Container>
           <Box
             css={{
@@ -131,7 +123,14 @@ export default function Homepage() {
               >
                 <Box>
                   By{' '}
-                  <Link onMouseEnter={() => handleOnHover('odeng')}>Odeng</Link>
+                  <StyledLink
+                    href="https://twitter.com/odengarch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => handleOnHover('odeng')}
+                  >
+                    Odeng
+                  </StyledLink>
                   <span
                     style={{
                       margin: '0 5px',
@@ -139,7 +138,14 @@ export default function Homepage() {
                   >
                     &
                   </span>
-                  <Link onMouseEnter={() => handleOnHover('jakz')}>Jakz</Link>
+                  <StyledLink
+                    href="https://twitter.com/0xJakz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => handleOnHover('jakz')}
+                  >
+                    Jakz
+                  </StyledLink>
                 </Box>
               </motion.div>
             </ContentColumn>
@@ -173,13 +179,12 @@ const StyledMainContainer = styled('main', {
   display: 'flex',
   alignItems: 'center',
   position: 'relative',
+  height: '100vh',
 
-  variants: {
-    size: {
-      md: {
-        height: 'calc(100vh - 200px)',
-      },
-    },
+  '@media (max-width: 768px)': {
+    height: 'calc(100vh - 200px)',
+    justifyContent: 'center',
+    alignItems: 'baseline',
   },
 })
 
@@ -191,7 +196,7 @@ const Title = styled(motion.h1, {
   color: '#2c2b2b',
 
   '@media (min-width: 768px)': {
-    fontSize: '4rem',
+    fontSize: '3rem',
   },
 })
 
@@ -202,7 +207,7 @@ const Paragraph = styled(motion.p, {
   color: '#363636',
 
   '@media (min-width: 768px)': {
-    fontSize: '1.5rem',
+    fontSize: '1.2rem',
   },
 })
 
