@@ -20,6 +20,7 @@ export default function MainGallery({ collections }: Props) {
       >
         <StyledTitle>
           <AnimatedCounter value={collections.length} /> Chibi
+          {collections.length > 1 ? 's' : ''}
         </StyledTitle>
       </Flex>
 
