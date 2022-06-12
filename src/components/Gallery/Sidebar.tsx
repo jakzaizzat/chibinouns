@@ -8,6 +8,7 @@ import { DashboardIcon } from '@radix-ui/react-icons'
 import { Flex } from '../Flex'
 import { useEffect, useMemo, useState } from 'react'
 import { useWindowSize } from 'react-use'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export default function Sidebar() {
   const traits = TRAITS
@@ -51,22 +52,41 @@ export default function Sidebar() {
         )}
       </Flex>
       {(isOpen || isDesktop) && (
-        <Grid
-          css={{
-            gridTemplateColumns: '1fr',
-            gap: '8px',
-          }}
-        >
-          {traits.map((trait, index) => (
-            <Box key={index}>
-              <TraitSelect
-                name={trait.name}
-                options={trait.options}
-              ></TraitSelect>
-              {index !== traits.length - 1 && <StyledSeparator />}
-            </Box>
-          ))}
-        </Grid>
+        <AnimatePresence key="sidebar-mobile">
+          <motion.div
+            initial={{
+              y: '10px',
+              opacity: 0,
+            }}
+            animate={{
+              y: '0',
+              opacity: 1,
+            }}
+            exit={{ opacity: 0, y: '10px' }}
+            transition={{
+              type: 'tween',
+              ease: 'easeInOut',
+              duration: 0.5,
+            }}
+          >
+            <Grid
+              css={{
+                gridTemplateColumns: '1fr',
+                gap: '8px',
+              }}
+            >
+              {traits.map((trait, index) => (
+                <Box key={index}>
+                  <TraitSelect
+                    name={trait.name}
+                    options={trait.options}
+                  ></TraitSelect>
+                  {index !== traits.length - 1 && <StyledSeparator />}
+                </Box>
+              ))}
+            </Grid>
+          </motion.div>
+        </AnimatePresence>
       )}
     </Box>
   )
