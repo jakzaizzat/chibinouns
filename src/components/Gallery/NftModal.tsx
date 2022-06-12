@@ -16,6 +16,7 @@ export default function NftModal({ nft }: Props) {
         autoPlay
         controls
         loop
+        playsInline={true}
         height="200px"
         width="100%"
         style={{
