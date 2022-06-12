@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import Image from 'next/image'
 import Container from '../../components/Container'
 import Logo from '../../components/Logo'
-import Button from '../../components/Button'
+import { Button } from '../../components/Button'
 import Link from '../../components/Link'
 import { styled } from '../../../stitches.config'
 import { motion } from 'framer-motion'
@@ -96,8 +96,16 @@ export default function Homepage() {
                     delay: 0.8,
                   }}
                 >
-                  <Button variant="primary">Follow us</Button>
-                  <Button variant="secondary">Discord</Button>
+                  <Button
+                    as={'a'}
+                    href="https://twitter.com/chibinouns"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="primary"
+                  >
+                    Follow us
+                  </Button>
+                  <Button color="secondary">Discord</Button>
                 </motion.div>
               </Box>
 

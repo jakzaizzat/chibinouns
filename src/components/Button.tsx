@@ -1,19 +1,6 @@
 import { styled } from '../../stitches.config'
 
-type Props = {
-  children: React.ReactNode
-  variant?: 'primary' | 'secondary'
-}
-
-export default function Button({ children, variant }: Props) {
-  return (
-    <ButtonStyled color={variant} type="button">
-      {children}
-    </ButtonStyled>
-  )
-}
-
-const ButtonStyled = styled('button', {
+export const Button = styled('button', {
   color: '$white',
   fontWeight: 'bold',
   padding: '10px 20px',
