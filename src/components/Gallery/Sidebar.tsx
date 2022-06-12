@@ -39,6 +39,8 @@ export default function Sidebar() {
         css={{
           alignItems: 'center',
           justifyContent: 'space-between',
+          borderBottom: '1px solid #e6e6e6',
+          marginBottom: '1rem',
         }}
       >
         <StyledTitle>Filter</StyledTitle>
