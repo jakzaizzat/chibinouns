@@ -9,18 +9,23 @@ import { motion } from 'framer-motion'
 import AnimatedCharacter from '../../components/AnimatedCharacter'
 import Navigation from '../../components/Navigation'
 import { Box } from '../../components/Box'
+import { useCoolMode } from '../../hooks/useCoolMode'
 
 export type CharacterName = 'odeng' | 'jakz'
 
 export default function Homepage() {
   const [activeCharacter, setActiveCharacter] = useState<CharacterName>('odeng')
 
+  const coolModeRef = useCoolMode(
+    '/images/glasses.png',
+  )
+
   const handleOnHover = (character: CharacterName) => {
     setActiveCharacter(character)
   }
 
   return (
-    <StyledScreenContainer character={activeCharacter}>
+    <StyledScreenContainer ref={coolModeRef} character={activeCharacter}>
       <AnimatedCharacter character={activeCharacter} />
       <Navigation />
 
