@@ -38,7 +38,7 @@ export const useCoolMode = (
 };
 
 const getContainer = () => {
-  const id = '_rk_site_coolMode';
+  const id = '_cn_site_coolMode';
   const existingContainer = document.getElementById(id);
 
   if (existingContainer) {
@@ -58,7 +58,7 @@ const getContainer = () => {
       'right:0',
       'bottom:0',
       'pointer-events:none',
-      'z-index:2147483647',
+      'z-index:9999999',
     ].join(';')
   );
 
