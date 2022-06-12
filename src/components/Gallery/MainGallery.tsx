@@ -8,7 +8,7 @@ type Props = {
 export default function MainGallery({ collections }: Props) {
   return (
     <StyledNftContainer>
-      {collections.map((collection) => (
+      {collections?.map((collection) => (
         <Nft key={collection.id} nft={collection} />
       ))}
     </StyledNftContainer>
@@ -17,9 +17,7 @@ export default function MainGallery({ collections }: Props) {
 
 const StyledNftContainer = styled('section', {
   display: 'grid',
-  gridTemplateColumns:  'repeat(auto-fit, minmax(200px, 1fr))',
-
-  justifyContent: 'center',
+  gridTemplateColumns: 'repeat(auto-fit, 250px)',
   gap: '24px',
 
   '@media (max-width: 768px)': {

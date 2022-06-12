@@ -7,23 +7,29 @@ import { Flex } from '../../Flex'
 type Props = {
   name: string
   count: number
+  onChecked: (checked: boolean) => void
 }
 
-export default function TraitCheckbox({ name, count }: Props) {
+export default function TraitCheckbox({ name, count, onChecked }: Props) {
   return (
     <Flex css={{ alignItems: 'center' }}>
-      <StyledCheckbox id={name}>
+      <StyledCheckbox id={name} onCheckedChange={onChecked}>
         <Checkbox.Indicator>
           <CheckIcon />
         </Checkbox.Indicator>
       </StyledCheckbox>
       <Label css={{ paddingLeft: 10 }} htmlFor={name}>
         {name}
-        <Box as="span" css={{
-          fontSize: '0.75rem',
-          marginLeft: '8px',
-          color: '$gray8',
-        }}>({count})</Box>
+        <Box
+          as="span"
+          css={{
+            fontSize: '0.75rem',
+            marginLeft: '8px',
+            color: '$gray8',
+          }}
+        >
+          ({count})
+        </Box>
       </Label>
     </Flex>
   )

@@ -3,12 +3,12 @@ import * as Collapsible from '@radix-ui/react-collapsible'
 import { keyframes, styled } from '../../../../stitches.config'
 import { Grid } from '../../Grid'
 import TraitCheckbox from './TraitCheckbox'
-import { BoxIcon, MinusIcon, PlusIcon } from '@radix-ui/react-icons'
+import { MinusIcon, PlusIcon } from '@radix-ui/react-icons'
 import { Flex } from '../../Flex'
-import { useState } from 'react'
+import {  useState } from 'react'
 import Image from 'next/image'
-import { Box } from '../../Box'
 import { Text } from '../../Text'
+import { useSidebarFilter } from '../../../contexts/sidebarFilter/SidebarFilterContext'
 
 type IOption = {
   name: string
@@ -22,6 +22,8 @@ type Props = {
 
 export default function TraitSelect({ name, options }: Props) {
   const [open, setOpen] = useState(false)
+
+  const { dispatch } = useSidebarFilter()
 
   return (
     <>
@@ -45,6 +47,7 @@ export default function TraitSelect({ name, options }: Props) {
                 src="https://images.squarespace-cdn.com/content/v1/6174dede767e8b38ff1ed251/42fb1a3c-8452-4c0e-a8ee-e7f7ca52b951/166704FE-5A42-454B-945A-616EC67EB23D.png?format=750w"
                 width={24}
                 height={24}
+                alt="Trait"
               />
               <Text
                 css={{
@@ -70,6 +73,23 @@ export default function TraitSelect({ name, options }: Props) {
                     key={index}
                     name={option.name}
                     count={option.count}
+                    onChecked={(checked) => {
+                      checked
+                        ? dispatch({
+                            type: 'ADD_FILTER',
+                            payload: {
+                              trait_type: name,
+                              value: option.name,
+                            },
+                          })
+                        : dispatch({
+                            type: 'REMOVE_FILTER',
+                            payload: {
+                              trait_type: name,
+                              value: option.name,
+                            },
+                          })
+                    }}
                   ></TraitCheckbox>
                 ))}
               </Grid>
