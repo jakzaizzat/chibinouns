@@ -10,6 +10,7 @@ export default function Navigation() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+        padding: '0 16px',
       }}
     >
       <Logo />
@@ -29,11 +30,11 @@ export default function Navigation() {
 const StyledListContainer = styled('div', {
   display: 'grid',
   gridColumnGap: '.5rem',
-  gridTemplateColumns: '1fr 1fr',
+  gridTemplateColumns: '1fr',
 })
 
 const StyledLink = styled('a', {
-  fontSize: '.8rem',
+  fontSize: '.9rem',
   color: '$black',
   opacity: '.8',
   cursor: 'pointer',

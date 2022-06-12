@@ -30,6 +30,10 @@ const StyledContainer = styled('div', {
   borderRadius: '8px',
   display: 'flex',
   alignItems: 'center',
+
+  ':hover': {
+    color: '$gray11',
+  }
 })
 
 const StyledIcon = styled('svg', {

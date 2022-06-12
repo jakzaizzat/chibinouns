@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <Link href="/">
       <a>
-        <img src="/images/logo.png" alt="logo" width={200} height="auto" />
+        <img src="/images/logo.png" alt="logo" width={150} height="auto" />
       </a>
     </Link>
   )
