@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { keyframes, styled } from '../../../stitches.config'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import * as Dialog from '@radix-ui/react-dialog'
 import NftModal from './NftModal'
 
@@ -23,28 +23,30 @@ export default function Nft({ nft, index = 0 }: { nft: INft; index?: number }) {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <StyledNftContainer
-          animate={{ opacity: 1 }}
-          initial={{
-            opacity: 0,
-          }}
-          exit={{ opacity: 0 }}
-          transition={{
-            type: 'tween',
-            ease: 'easeInOut',
-            duration: index / 10 + 0.2,
-          }}
-        >
-          <StyledImage
-            src={nft.imageUrl}
-            height={400}
-            width={400}
-            alt="odeng"
-          />
-          <StyledText>
-            Chibizen #{nft.id} <StyledName> {nft.name}</StyledName>
-          </StyledText>
-        </StyledNftContainer>
+        <AnimatePresence key={index}>
+          <StyledNftContainer
+            animate={{ opacity: 1 }}
+            initial={{
+              opacity: 0,
+            }}
+            exit={{ opacity: 0 }}
+            transition={{
+              type: 'tween',
+              ease: 'easeInOut',
+              duration: index / 10 + 0.2,
+            }}
+          >
+            <StyledImage
+              src={nft.imageUrl}
+              height={400}
+              width={400}
+              alt="odeng"
+            />
+            <StyledText>
+              Chibizen #{nft.id} <StyledName> {nft.name}</StyledName>
+            </StyledText>
+          </StyledNftContainer>
+        </AnimatePresence>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Overlay>
