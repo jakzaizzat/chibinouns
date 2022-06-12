@@ -17,6 +17,7 @@ export default function Gallery() {
   const filteredCollections = useMemo(() => {
     if (filters.length === 0) return COLLECTIONS
 
+    // TODO: change filtering logic
     return COLLECTIONS.filter((collection) => {
       return filters.every((filter: { trait_type: string; value: string }) => {
         return collection.attributes.some((trait) => {

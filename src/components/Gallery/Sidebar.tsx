@@ -23,7 +23,17 @@ export default function Sidebar() {
   }, [width])
 
   return (
-    <Box>
+    <Box
+      css={{
+        position: 'sticky',
+        height: 'calc(100vh - 300px)',
+        top: 0,
+
+        '@media (max-width: 768px)': {
+          height: 'auto',
+        },
+      }}
+    >
       <Flex
         css={{
           alignItems: 'center',

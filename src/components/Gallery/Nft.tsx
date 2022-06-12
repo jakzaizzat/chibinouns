@@ -19,11 +19,22 @@ export type INft = {
   attributes: ITraits[]
 }
 
-export default function Nft({ nft }: { nft: INft }) {
+export default function Nft({ nft, index = 0 }: { nft: INft; index?: number }) {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <StyledNftContainer>
+        <StyledNftContainer
+          animate={{ opacity: 1 }}
+          initial={{
+            opacity: 0,
+          }}
+          exit={{ opacity: 0 }}
+          transition={{
+            type: 'tween',
+            ease: 'easeInOut',
+            duration: index / 10 + 0.2,
+          }}
+        >
           <StyledImage
             src={nft.imageUrl}
             height={400}
