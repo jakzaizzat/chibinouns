@@ -31,6 +31,7 @@ export default function Sidebar() {
 
         '@media (max-width: 768px)': {
           height: 'auto',
+          position: 'relative',
         },
       }}
     >

@@ -14,7 +14,7 @@ export default function NftModal({ nft }: Props) {
     <StyledContainer>
       <video
         autoPlay
-        controls
+        controls={false}
         loop
         playsInline={true}
         height="200px"
@@ -64,6 +64,7 @@ export default function NftModal({ nft }: Props) {
 const StyledContainer = styled('section', {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
+  zIndex: 1,
 
   '@media (max-width: 768px)': {
     gridTemplateColumns: '1fr',
